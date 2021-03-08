@@ -23,10 +23,36 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 08 Mar 2021 22:24:42 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 08 Mar 2021 22:36:32 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://tianpingan.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Test_for_auto</title>
+                <link>https://tianpingan.github.io/posts/test_for_auto/</link>
+                <guid isPermaLink="true">https://tianpingan.github.io/posts/test_for_auto/</guid>
+                <pubDate>Mon, 08 Mar 2021 22:35:37 &#43;0800</pubDate>
+                
+                    <author>tianpingan2000@gmail.com (TianPingan)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;this is a test&lt;/p&gt;
+&lt;p&gt;for&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Test</title>
