@@ -7,23 +7,23 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>田平安</title>
+        <title>APTian</title>
         <link>https://tianpingan.github.io/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description>TianPingan想做一个努力的人</description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+            <managingEditor>tianpingan2000@gmail.com (TianPingan)</managingEditor>
         
         
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+            <webMaster>tianpingan2000@gmail.com (TianPingan)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 08 Mar 2021 21:03:07 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 08 Mar 2021 22:13:01 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://tianpingan.github.io/rss.xml" />
         
@@ -34,7 +34,7 @@
                 <guid isPermaLink="true">https://tianpingan.github.io/posts/test/</guid>
                 <pubDate>Mon, 08 Mar 2021 20:14:55 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>tianpingan2000@gmail.com (TianPingan)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -59,12 +59,12 @@
                 <guid isPermaLink="true">https://tianpingan.github.io/posts/hello-world/</guid>
                 <pubDate>Mon, 08 Mar 2021 19:51:30 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>tianpingan2000@gmail.com (TianPingan)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h1 id=&#34;测试&#34;&gt;测试&lt;/h1&gt;
-&lt;p&gt;$test = x + 1$&lt;/p&gt;
+&lt;p&gt;$$x = x + 1$$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;测试&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
