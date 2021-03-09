@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Posts | APTian</title>
+    <title>Posts | Tian</title>
 
     <link rel="stylesheet" href="/css/meme.min.2e7500b28bb9c57425395905c9fd2412db86a3bd9758fdc455f327a66baf2db6.css"/>
 
@@ -33,10 +33,10 @@
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="APTian" />
+    <meta name="apple-mobile-web-app-title" content="Tian" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="APTian" />
+    <meta name="application-name" content="Tian" />
     <meta name="msapplication-starturl" content="../" />
     <meta name="msapplication-TileColor" content="#fff" />
     <meta name="msapplication-TileImage" content="../icons/mstile-150x150.png" />
@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "datePublished": "2021-03-08T20:17:43+00:00",
-        "dateModified": "2021-03-08T22:35:53+08:00",
+        "dateModified": "2021-03-09T10:51:36+08:00",
         "url": "https://tianpingan.github.io/posts/",
         "name": "Posts",
         "description": "TianPingan想做一个努力的人",
@@ -62,7 +62,7 @@
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
         "publisher": {
             "@type": "Organization",
-            "name": "APTian",
+            "name": "Tian",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://tianpingan.github.io/icons/apple-touch-icon.png"
@@ -88,7 +88,7 @@
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="TianPingan想做一个努力的人" />
 <meta property="og:url" content="https://tianpingan.github.io/posts/" />
-<meta property="og:site_name" content="APTian" />
+<meta property="og:site_name" content="Tian" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://tianpingan.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
 
@@ -106,7 +106,7 @@
                     
     <div class="site-brand">
         
-            <a href="/" class="brand">APTian</a>
+            <a href="/" class="brand">Tian</a>
         
     </div>
 
@@ -325,56 +325,32 @@
         
 
         
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" />
-<script>
-    if (typeof renderMathInElement === 'undefined') {
-        var getScript = (options) => {
-            var script = document.createElement('script');
-            script.defer = true;
-            script.crossOrigin = 'anonymous';
-            Object.keys(options).forEach((key) => {
-                script[key] = options[key];
-            });
-            document.body.appendChild(script);
+
+
+    <script>
+    if (typeof MathJax === 'undefined') {
+        window.MathJax = {
+            loader: {
+                load: ['[tex]/mhchem']
+            },
+            
+            tex: {
+                inlineMath: {'[+]': [['$', '$']]},
+                tags: 'ams',
+                packages: {'[+]': ['mhchem']}
+            }
         };
-        getScript({
-            src: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js',
-            integrity: 'sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4',
-            onload: () => {
-                getScript({
-                    src: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mhchem.min.js',
-                    integrity: 'sha384-5gCAXJ0ZgozlShOzzT0OWArn7yCPGWVIvgo+BAd8NUKbCmulrJiQuCVR9cHlPHeG',
-                    onload: () => {
-                        getScript({
-                            src: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js',
-                            integrity: 'sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa',
-                            onload: () => {
-                                renderKaTex();
-                            }
-                        });
-                    }
-                });
-            }
-        });
+        (function() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+            script.defer = true;
+            document.head.appendChild(script);
+        })();
     } else {
-        renderKaTex();
-    }
-    function renderKaTex() {
-        renderMathInElement(
-            document.body,
-            {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "\\[", right: "\\]", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false}
-                ]
-            }
-        );
+        MathJax.texReset();
+        MathJax.typeset();
     }
 </script>
-
-
 
 
 
