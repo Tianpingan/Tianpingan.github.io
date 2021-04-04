@@ -23,10 +23,36 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sun, 04 Apr 2021 10:17:06 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 04 Apr 2021 10:18:02 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://tianpingan.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Test_2</title>
+                <link>https://tianpingan.github.io/posts/test_2/</link>
+                <guid isPermaLink="true">https://tianpingan.github.io/posts/test_2/</guid>
+                <pubDate>Sun, 04 Apr 2021 10:17:37 &#43;0800</pubDate>
+                
+                    <author>tianpingan2000@gmail.com (TianPingan)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;这是测试&lt;/p&gt;
+&lt;p&gt;$hello$&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Numpy_intro</title>
