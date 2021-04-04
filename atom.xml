@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Tian</title>
     <subtitle type="html">TianPingan想做一个努力的人</subtitle>
-    <updated>2021-03-10T14:32:05&#43;08:00</updated>
+    <updated>2021-04-04T10:17:06&#43;08:00</updated>
     <id>https://tianpingan.github.io/</id>
     <link rel="alternate" type="text/html" href="https://tianpingan.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://tianpingan.github.io/atom.xml" />
@@ -1118,6 +1118,100 @@ print(&#39;%.2f&#39; % 3.1415926)
 &lt;p&gt;48，连续结构文件必须采用连续分配方式，而链接结构文件和索引结构文件都可采取&lt;strong&gt;离散分配方式&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;49，文件系统中，若文件的物理结构采用连续结构有关文件的物理位置的信息包括&lt;strong&gt;首块地址和文件长度&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;50，位示图可用于磁盘空间管理，在文件系统中，为实现文件保护，一般采用&lt;strong&gt;口令，密码和访问控制&lt;/strong&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text"></title>
+            <link rel="alternate" type="text/html" href="https://tianpingan.github.io/posts/%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E5%A5%BDc%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/" />
+            <id>https://tianpingan.github.io/posts/%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E5%A5%BDc%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/</id>
+            <updated>2021-03-10T15:49:11&#43;08:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>TianPingan</name>
+                    <uri>https://tianpingan.github.io/</uri>
+                    <email>tianpingan2000@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;模块&#34;&gt;模块&lt;/h2&gt;
+&lt;p&gt;C 和 C++ 程序基本上都是一些分离编译的&lt;strong&gt;模块&lt;/strong&gt;的集合。得益于分离编译的观念，在编译一个大型项目的可执行文件时，单独重新编译被修改了的模块能提高效率。&lt;/p&gt;
+&lt;p&gt;在 C 语言中，&lt;strong&gt;一个模块是由一些结构体，全局变量和函数们组成的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;模块 = 结构体 + 全局变量 + 函数&lt;/p&gt;
+&lt;p&gt;函数们通常会被定义在源文件中（&lt;code&gt;.c&lt;/code&gt; 文件）。除了&lt;code&gt;main&lt;/code&gt;模块，其他模块的源文件（&lt;code&gt;.c&lt;/code&gt;文件）都会有一个对应的头文件（&lt;code&gt;.h&lt;/code&gt;文件），其中提供了其他模块要使用本模块时所必须的一些声明。&lt;/p&gt;
+&lt;p&gt;这么一来其他模块在访问模块 X 时，只要简单地写上&lt;code&gt;#include &amp;quot;X.h&amp;quot;&lt;/code&gt;就行了，链接器会继续完成剩下的工作。除非&lt;code&gt;X.c&lt;/code&gt;文件中的代码被修改了，否则这个文件中的代码只需要一次编译就足够了；剩下的时间里，链接器会将 X 模块的代码链接到最终的可执行文件里而不用再次编译 X 模块，这使得 Unix 下的&lt;code&gt;make&lt;/code&gt;工具和一些 IDE 们能够更有效地工作。&lt;/p&gt;
+&lt;p&gt;一个组织良好的 C 程序应当良好地选择（抽象出？）模块，并且适当地构建其头文件，让他能够让人轻松地使用他的功能。这也确保了所有的程序的组件都使用了相同的定义和声明。这对编译器和链接器强制遵守&lt;strong&gt;一次定义规则&lt;/strong&gt;（One Definition Rule）来讲也是非常有帮助的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为了尽可能地表述清晰和达到编译上的遍历，你可以按照之下的几条规则来做。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则一、每个由&lt;code&gt;.c&lt;/code&gt;和&lt;code&gt;.h&lt;/code&gt;文件组成的模块都应符合清晰的功能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则二、总是在头文件中使用『包含文件防护』&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则三、把使用本模块需要的声明都放在头文件中，这个文件也常被用来访问此模块。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则四、头文件只包含声明，并且他要在其&lt;code&gt;.c&lt;/code&gt;文件中被导入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则五、将外部全局变量的声明使用&lt;code&gt;extern&lt;/code&gt;修饰后放在头文件里，并且把声明定义放在&lt;code&gt;.c&lt;/code&gt;文件中&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则六、把模块内部的声明移出头文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则七、每个头文件的都应仅仅导入此头文件所必须的一些头文件，来让这个头文件能够被正确地编译&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则八、如果仅仅要使用一个未完全声明的结构体，那么就不用导入他对应的头文件了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则九、一个头文件应当能被他自身所成功编译&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则十、&lt;code&gt;A.c&lt;/code&gt;文件应该最先导入&lt;code&gt;A.h&lt;/code&gt;文件，之后再导入其他所需的头文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则十一、永远不要因为任何原因导入一个&lt;code&gt;.c&lt;/code&gt;文件&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;逐条分析&#34;&gt;逐条分析&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;规则一、每个由&lt;code&gt;.c&lt;/code&gt;和&lt;code&gt;.h&lt;/code&gt;文件组成的模块都应符合清晰的功能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从概念上讲，一个模块就是一些可以被一起开发和维护的声明和函数，并假定会在不同的工程中被重用。不要强行合并一些需要被分开来维护的内容，也不要强行分离一些总是要被一起维护的内容。标准库中的&lt;code&gt;math.h&lt;/code&gt;和&lt;code&gt;string.h&lt;/code&gt;就个很明显的例子。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则二、总是在头文件中使用『包含文件防护』&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是与&lt;code&gt;#ifdef&lt;/code&gt;最紧密的例子。选择一个基于头文件名的防护符，这个简单的防护符会确保在一个工程中头文件名总是相互独立的。按照惯例这个防护符是全部大写的。比如&lt;code&gt;Geometry_base.h&lt;/code&gt;文件中就应当以如下内容开头：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ifndef GEOMETRY_BASE_H
+#define GEOMETRY_BASE_H
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并且以如下内容结束&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; #endif
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;作者注：防护符不要以下划线为开头。下划线开头的名字通常为 C 语言内部的一些模块所使用，打破这一规则会造成一些不必要的错误。一下划线开头的规则是相当复杂的，不过只要你记住这一点，你就几乎不会遇到错误。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则三、把使用本模块需要的声明都放在头文件中，这个文件也常被用来访问此模块。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因此&lt;code&gt;#include&lt;/code&gt;进来的头文件提供了编译此模块所有必要的信息，并且让链接器能正确地链接它们。此外，如果模块 A 需要使用模块 X 的功能，那么它总是要&lt;code&gt;#include &amp;quot;X.h&amp;quot;&lt;/code&gt;文件，永远不要出现 X 模块中的声明的硬编码。为什么呢？如果 X 模块被修改了，但是你却忘记修改那些 A 模块中那些被硬编码了的声明，那么模块 A 就会出现一些不容易被编译器和链接器发现的&lt;code&gt;run-time&lt;/code&gt;错误。这个种行为违反了&lt;code&gt;One Definition Rule&lt;/code&gt;但是编译器和连接器却又难以发现。总是通过一个模块的头文件来引用模块可以确保只有一处的声明需要被维护，这也对遵守&lt;code&gt;One Definition Rule&lt;/code&gt;有帮助。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则四、头文件只包含声明，并且他要在其&lt;code&gt;.c&lt;/code&gt;文件中被导入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;把模块中的结构体、函数原型和使用&lt;code&gt;extern&lt;/code&gt;修饰的全局变量的声明放在&lt;code&gt;.h&lt;/code&gt;文件中；把函数的定义和全局变量的定义以及初始化的过程放到&lt;code&gt;.c&lt;/code&gt;文件中。&lt;code&gt;.c&lt;/code&gt;文件必须导入对应的&lt;code&gt;.h&lt;/code&gt;文件；编译器会检查两个文件之间的差异，并确保两个之间的一致性。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则五、将外部全局变量的声明使用&lt;code&gt;extern&lt;/code&gt;修饰后放在头文件里，并且把声明定义放在&lt;code&gt;.c&lt;/code&gt;文件中&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;针对有些需要在整个程序中访问的全局变量，把它用&lt;code&gt;extern&lt;/code&gt;修饰后放到头文件中，就像下面这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;extern int g_number_of_entires;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他模块在使用此模块时只需要导入对应的&lt;code&gt;.h&lt;/code&gt;文件。在模块自身的&lt;code&gt;.c&lt;/code&gt;文件中也要导入相应的&lt;code&gt;.h&lt;/code&gt;文件，并且在文件开头的地方应当出现对应全局变量的声明定义，就像下面这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;int g_number_of_entities = 0;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然，某些默认为 0 的变量可以被直接当作初始值来使用，静态变量或者全局变量会被自动地初始化成 0。但是显式地初始化成 0 并不是必要的，因为这等于标记这个声明是定义声明，意思就是这个变量的值是唯一的可确定的。注意不同的 C 编译器和链接器可能会允许其他设置全局变量的方式，但是这是被 C++ 的标准所接受的，并且对 C 语言里也是有效的，这也确保了全局变量的&lt;code&gt;One Definiton Rule&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则六、把模块内部的声明移出头文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有时候模块需要严格使用内部的不被外部所支持的零件来。如果某些结构体声明、全局变量或者函数仅仅在模块内部要被使用到，那就把他们只放在&lt;code&gt;.c&lt;/code&gt;文件的顶部，并且不要在&lt;code&gt;.h&lt;/code&gt;文件中提及它们。此外，使用&lt;code&gt;static&lt;/code&gt;来修饰这些全局变量和函数来关联它们。&lt;/p&gt;
+&lt;p&gt;这么做的话，其他模块就不会知道（也无法知道）这些内部的声明、全局变量或者函数。使用&lt;code&gt;static&lt;/code&gt;修饰过的声明会让链接器来强制实施它们内部的关联性。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则七、每个头文件的都应仅仅导入此头文件所必须的一些头文件，来让这个头文件能够被正确地编译&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个头文件到底需要什么呢？如果一个结构体 X 备用来作为这个头文件的中一个结构体中的成员，那么你就必须导入&lt;code&gt;X.h&lt;/code&gt;进来，那么编译器就知道这个 X 结构体到底是谁。不要导入一些仅仅在&lt;code&gt;.c&lt;/code&gt;文件里需要的头文件。&lt;/p&gt;
+&lt;p&gt;举个例子的话，&lt;code&gt;&amp;lt;math.h&amp;gt;&lt;/code&gt;就常常被使用在函数的定义中，将他在&lt;code&gt;.c&lt;/code&gt;文件中导入，而不是&lt;code&gt;.h&lt;/code&gt;文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则八、如果仅仅要使用一个未完全声明的结构体，那么就不用导入他对应的头文件了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果一个结构体 X 在结构体声明或函数定义中仅仅出现为一个指针类型，并且代码中不需要访问这个结构体内的成员变量，那么你就不应该导入&lt;code&gt;X.h&lt;/code&gt;，而是在使用它前用一个未完全声明的结构体 X 来代替他（也称做传递声明）。就像下面这样，通过一个指针来引用 X：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;struct X; /* incomplete (&amp;quot;forward&amp;quot;) declaration */
+struct Thing { 
+    int i; 
+    struct *X x_ptr; 
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;编译器很乐意接受代码中一个指针指向一个未完全声明的结构体类型，因为指针总是有相同的大小并且只取决于它们指向了什么。典型的就是只有源文件中需要访问 X 结构体的变量或者大小，所以只有&lt;code&gt;.c&lt;/code&gt;文件中需要&lt;code&gt;#include &amp;quot;X.h&amp;quot;&lt;/code&gt;。这是对模块的概括及送耦合化是非常有用的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则九、一个头文件应当能被他自身所成功编译&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一个头文件需要显示地导入或者传递一些任何他需要的东西。如果不遵守这个规则的话，在修改所导入的头文件或者被其他头文件所导入时会出现一些令人疑惑的问题。你可以建立一个&lt;code&gt;test.c&lt;/code&gt;并在这个源文件里仅仅导入&lt;code&gt;A.h&lt;/code&gt;来检查这个头文件是否可以被他自身所编译。这里不应该出现任何编译错误。如果发生错误的话说明有些内容需要被导入或者传递声明。测试所有的头文件从导入顺序的底部移到最前面，这会帮助你找到一些与其他头文件的意外的依赖问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则十、&lt;code&gt;A.c&lt;/code&gt;文件应该最先导入&lt;code&gt;A.h&lt;/code&gt;文件，之后再导入其他所需的头文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;总是吧&lt;code&gt;#include &amp;quot;A.h&amp;quot;&lt;/code&gt;放在第一位来避免丢失任何其他的所依赖的头文件。之后如果模块&lt;code&gt;A&lt;/code&gt;的代码中需要使用模块&lt;code&gt;X&lt;/code&gt;的话，显式地&lt;code&gt;#include &amp;quot;X.h&amp;quot;&lt;/code&gt;，那么&lt;code&gt;A.c&lt;/code&gt;文件并不是意外地导入&lt;code&gt;X.h&lt;/code&gt;在其他位置。&lt;/p&gt;
+&lt;p&gt;并没有一致规定&lt;code&gt;A.c&lt;/code&gt;文件需要再次导入&lt;code&gt;A.h&lt;/code&gt;文件中已经导入的文件，但是有两个建议：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果&lt;code&gt;X.h&lt;/code&gt;文件在逻辑上不可避免地需要出现在&lt;code&gt;A.h&lt;/code&gt;中，那么在&lt;code&gt;.c&lt;/code&gt;文件中再次被导入是多余的了。所以在&lt;code&gt;A.c&lt;/code&gt;文件中不导入&lt;code&gt;X.h&lt;/code&gt;文件是可以的。&lt;/li&gt;
+&lt;li&gt;如果在&lt;code&gt;A.h&lt;/code&gt;文件中&lt;code&gt;#include &amp;quot;X.h&amp;quot;&lt;/code&gt;可以让读者更明确我们在使用 X 模块，并且 A 模块中需要对 X 模块中的某些修改所以来的话就需要在&lt;code&gt;A.c&lt;/code&gt;文件中导入&lt;code&gt;X.h&lt;/code&gt;。举个例子：可能我们已经有一个结构体&lt;code&gt;Thing&lt;/code&gt;了，之后需要摆脱它，但是依然需要在实现的代码中需要他，所以导入这个头文件可以帮助我们摆脱编译错误，那么就可以再次导入&lt;code&gt;X.h&lt;/code&gt;在&lt;code&gt;A.c&lt;/code&gt;文件中。当然，如果&lt;code&gt;X.h&lt;/code&gt;文件不再是必须的了，那么对这个文件的导入语句就应该被删去。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;规则十一、永远不要因为任何原因导入一个&lt;code&gt;.c&lt;/code&gt;文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是鲜有发生的，而且总是会把一切都搞乱。为什么会发生这种事呢？因为有时候我们为了维护上的方便而需要把一块代码放到同一个文件中而被其他&lt;code&gt;.c&lt;/code&gt;文件锁共享，所以你把它单独分为一个文件。因为这些代码并不是由一些常规的声明和定义，你知道把他们放在一个头文件里会误导别人，所以你把它放在一个&lt;code&gt;.c&lt;/code&gt;文件里，并且之后用&lt;code&gt;#include &amp;quot;stuff.c&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;但是这么做会造成其他开发者或编译器的困惑，因为&lt;code&gt;.c&lt;/code&gt;文件应当被分别编译，所以你必须另外告诉其他开发者不要编译这个&lt;code&gt;.c&lt;/code&gt;文件。此外，如果它们丢失了这份难以纪录的点，它们会得到由编译器返回的大量奇怪的问题，让人们困惑它们应该怎么使用你的代码。&lt;/p&gt;
+&lt;p&gt;结尾：如果他并不像其他一个正常的头文件或者源文件的话，不要把他们命名成差不多的。&lt;/p&gt;
+&lt;p&gt;如果你认为你必须这么做的话，首先确认这部分代码并不能被单独分成一个模块，之后将这个文件使用不一样的后缀名&lt;code&gt;.inc&lt;/code&gt;或者&lt;code&gt;.inl&lt;/code&gt;以来使用他。&lt;/p&gt;
 </content>
             
             
